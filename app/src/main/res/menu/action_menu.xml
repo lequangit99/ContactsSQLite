@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/detele_contacts"
+        android:title="Xoá"
+        >
+    </item>
+    <item
+        android:id="@+id/call_contacts"
+        android:title="Gọi"
+        >
+    </item>
+
+    <item
+        android:id="@+id/sms_contacts"
+        android:title="Gửi tin nhắn"
+        >
+    </item>
+</menu>

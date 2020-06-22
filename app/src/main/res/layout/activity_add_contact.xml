@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddContact">
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tên"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+    </TextView>
+    <EditText
+        android:id="@+id/edt_Name"
+        android:layout_below="@+id/txtName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Lê Quang"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+    </EditText>
+
+    <TextView
+        android:id="@+id/txtPhone"
+        android:layout_below="@id/edt_Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Số điện thoại"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+    </TextView>
+    <EditText
+        android:id="@+id/edt_Phone"
+        android:layout_below="@id/txtPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="0390096665"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+    </EditText>
+    <LinearLayout
+        android:id="@+id/layout_ngaySinh"
+        android:layout_below="@+id/edt_Phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/txtBirthday"
+            android:layout_below="@id/edt_Phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ngày Sinh"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/txtHien_Birthday"
+            android:layout_below="@id/edt_Phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="09-11-1999"
+            android:layout_marginStart="100dp"
+            android:textSize="30sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+
+        </TextView>
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_Save"
+        android:layout_below="@id/layout_ngaySinh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lưu"
+        android:layout_centerHorizontal="true">
+
+    </Button>
+
+</RelativeLayout>
