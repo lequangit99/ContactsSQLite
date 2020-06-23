@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="Sắp xếp ID"
+        android:id="@+id/main_sort_id_option"
+        >
+
+    </item>
+
+    <item
+        android:title="Sắp xếp tên"
+        android:id="@+id/main_sort_name_option"
+        >
+
+    </item>
+
+    <item
+        android:title="Sắp xếp SĐT"
+        android:id="@+id/main_sort_phone_option"
+        >
+
+    </item>
+
+    <item
+        android:title="Tìm kiếm"
+        android:id="@+id/main_search_option"
+        >
+
+    </item>
+
+</menu>

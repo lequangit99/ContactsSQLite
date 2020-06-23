@@ -16,4 +16,10 @@
         android:title="Gửi tin nhắn"
         >
     </item>
+
+    <item
+        android:id="@+id/email_contacts"
+        android:title="Gửi email"
+        >
+    </item>
 </menu>

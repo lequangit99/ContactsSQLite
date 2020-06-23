@@ -4,21 +4,24 @@ public class Contact {
     private int mId;
     private String mName;
     private String mPhoneNumber;
+    private String mEmail;
     private String mBirthday;
 
     public Contact() {
     }
 
-    public Contact(String mName, String mPhoneNumber, String mBirthday) {
-        this.mName = mName;
-        this.mPhoneNumber = mPhoneNumber;
-        this.mBirthday = mBirthday;
-    }
-
-    public Contact(int mId, String mName, String mPhoneNumber, String mBirthday) {
+    public Contact(int mId, String mName, String mPhoneNumber, String mEmail, String mBirthday) {
         this.mId = mId;
         this.mName = mName;
         this.mPhoneNumber = mPhoneNumber;
+        this.mEmail = mEmail;
+        this.mBirthday = mBirthday;
+    }
+
+    public Contact(String mName, String mPhoneNumber, String mEmail, String mBirthday) {
+        this.mName = mName;
+        this.mPhoneNumber = mPhoneNumber;
+        this.mEmail = mEmail;
         this.mBirthday = mBirthday;
     }
 
@@ -44,6 +47,14 @@ public class Contact {
 
     public void setmPhoneNumber(String mPhoneNumber) {
         this.mPhoneNumber = mPhoneNumber;
+    }
+
+    public String getmEmail() {
+        return mEmail;
+    }
+
+    public void setmEmail(String mEmail) {
+        this.mEmail = mEmail;
     }
 
     public String getmBirthday() {

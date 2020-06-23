@@ -18,7 +18,7 @@ import com.example.contactssqlite.data.DBContext;
 import com.example.contactssqlite.model.Contact;
 
 public class AddContact extends AppCompatActivity {
-    private EditText edtName, edtPhone;
+    private EditText edtName, edtPhone, edtEmail;
     private Button btnSave;
     private DBContext dbContext;
     private TextView txtNgaySinh;
@@ -38,6 +38,7 @@ public class AddContact extends AppCompatActivity {
         if (code == 2){
             edtName.setText(intent.getStringExtra("name"));
             edtPhone.setText(intent.getStringExtra("phone"));
+            edtEmail.setText(intent.getStringExtra("email"));
             txtNgaySinh.setText(intent.getStringExtra("ns"));
         }
 
@@ -46,11 +47,9 @@ public class AddContact extends AppCompatActivity {
             public void onClick(View view) {
                 if (code == 1){
                     Contact contact = createContact();
-                    if (contact != null) {
                         dbContext.addContact(contact);
                         Intent intent = new Intent(AddContact.this, MainActivity.class);
                         startActivity(intent);
-                    }
                 }
                 if (code == 2){
                     Contact contact = new Contact();
@@ -58,6 +57,7 @@ public class AddContact extends AppCompatActivity {
                     contact.setmName(edtName.getText().toString());
                     contact.setmPhoneNumber(edtPhone.getText().toString());
                     contact.setmBirthday(txtNgaySinh.getText().toString());
+                    contact.setmEmail(edtEmail.getText().toString());
                     dbContext.updateContact(contact);
                     Intent intent = new Intent(AddContact.this, MainActivity.class);
                     startActivity(intent);
@@ -95,6 +95,7 @@ public class AddContact extends AppCompatActivity {
     private void initView(){
         edtName = (EditText) findViewById(R.id.edt_Name);
         edtPhone = (EditText) findViewById(R.id.edt_Phone);
+        edtEmail = (EditText) findViewById(R.id.edt_Email);
         btnSave = (Button) findViewById(R.id.btn_Save);
         txtNgaySinh = (TextView) findViewById(R.id.txtHien_Birthday);
     }
@@ -103,8 +104,9 @@ public class AddContact extends AppCompatActivity {
         String name = edtName.getText().toString();
         String phoneNumber = edtPhone.getText().toString();
         String Birthday = txtNgaySinh.getText().toString();
+        String Email = edtEmail.getText().toString();
 
-        Contact contact = new Contact(name,phoneNumber,Birthday);
+        Contact contact = new Contact(name,phoneNumber,Email,Birthday);
         return contact;
     }
 }

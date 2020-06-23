@@ -20,6 +20,7 @@ public class DBContext extends SQLiteOpenHelper {
     private static final String ID = "id";
     private static final String NAME = "name";
     private static final String PHONE_NUMBER = "phone";
+    private static final String EMAIL = "email";
     private static final String BIRTHDAY = "birthday";
     private static int VERSION = 1;
 
@@ -29,6 +30,7 @@ public class DBContext extends SQLiteOpenHelper {
             ID + " integer primary key, " +
             NAME + " TEXT, " +
             PHONE_NUMBER + " TEXT, " +
+            EMAIL + " TEXT, " +
             BIRTHDAY + " TEXT)";
 
     public DBContext(@Nullable Context context) {
@@ -51,6 +53,7 @@ public class DBContext extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(NAME, contact.getmName());
         values.put(PHONE_NUMBER, contact.getmPhoneNumber());
+        values.put(EMAIL, contact.getmEmail());
         values.put(BIRTHDAY, contact.getmBirthday());
 
         db.insert(TABLE_NAME, null, values);
@@ -70,7 +73,8 @@ public class DBContext extends SQLiteOpenHelper {
                 contact.setmId(cursor.getInt(0));
                 contact.setmName(cursor.getString(1)+"");
                 contact.setmPhoneNumber(cursor.getString(2));
-                contact.setmBirthday(cursor.getString(3));
+                contact.setmEmail(cursor.getString(3));
+                contact.setmBirthday(cursor.getString(4));
                 listContact.add(contact);
 
             } while (cursor.moveToNext());
@@ -84,11 +88,11 @@ public class DBContext extends SQLiteOpenHelper {
         contentValues.put(NAME,contact.getmName());
         contentValues.put(PHONE_NUMBER,contact.getmPhoneNumber());
         contentValues.put(BIRTHDAY,contact.getmBirthday());
+        contentValues.put(EMAIL,contact.getmEmail());
         return db.update(TABLE_NAME,contentValues,ID+"=?",new String[]{String.valueOf(contact.getmId())});
     }
     public int deleteContact(int id){
         SQLiteDatabase db = this.getWritableDatabase();
         return db.delete(TABLE_NAME,ID+"=?",new String[] {String.valueOf(id)});
     }
-
 }
